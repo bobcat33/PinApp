@@ -6,21 +6,58 @@ import javax.swing.event.HyperlinkEvent;
 import java.awt.*;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
+import java.io.File;
 import java.io.IOException;
 import java.net.URISyntaxException;
 import java.net.URL;
+import java.nio.channels.FileChannel;
+import java.nio.channels.FileLock;
+import java.nio.file.StandardOpenOption;
 
 public class Main {
     public static String appName = "Pin-App";
     public static String pinErrorTitle = "Pin-App", pinErrorText = "An error occurred pinning that app, please try again";
     public static String unPinErrorTitle = "Pin-App", unPinErrorText = "An error occurred unpinning that app, please try again";
+    public static String issuesLink = "https://github.com/bobcat33/PinApp/issues";
     public static TrayIcon trayIcon;
 
     public static void main(String[] args) {
         if (!SystemTray.isSupported()){
-            windowMessageHyperlink("Pin-App  -  Warning", "Your system does not support this app!<br/>" +
-                    "If you believe this is a bug please submit an issue to " +
-                    "<a href=\"https://github.com/bobcat33/PinApp/issues\">https://github.com/bobcat33/PinApp/issues</a>", JOptionPane.WARNING_MESSAGE);
+            windowMessageHyperlink(Main.appName + "  -  Warning", "Your system does not support this app!" +
+                    "<br/>If you believe this is a bug please submit an issue to " +
+                    "<a href=\""+ issuesLink + "\">"+ issuesLink + "</a>", JOptionPane.WARNING_MESSAGE);
+            return;
+        }
+
+        String appFiles = System.getProperty("user.home") + "\\.PinApp";
+        File dir = new File(appFiles);
+        if (!dir.exists())
+            if (!dir.mkdir()) {
+                windowMessageHyperlink(Main.appName + "  -  Error", "ERROR: Failed to create essential " +
+                        "directory \"" + appFiles + "\"<br/>" +
+                        "This may be the result of a bug - please submit an issue to " +
+                        "<a href=\""+ issuesLink + "\">"+ issuesLink + "</a>", JOptionPane.ERROR_MESSAGE);
+                return;
+            }
+
+        File file = new File(appFiles, "pin_app.lock");
+
+        try {
+            FileChannel fc = FileChannel.open(file.toPath(),
+                    StandardOpenOption.CREATE,
+                    StandardOpenOption.WRITE);
+            FileLock lock = fc.tryLock();
+            if (lock == null) {
+                windowMessageHyperlink(Main.appName, Main.appName + " is already open!<br/>" +
+                        "Check the system tray in the bottom right of the screen," +
+                        " you may have to press \"Show hidden icons\".", JOptionPane.WARNING_MESSAGE);
+                return;
+            }
+        } catch (IOException e) {
+            windowMessageHyperlink(Main.appName + "  -  Error", "ERROR: Failed to load lock file<br/>" +
+                    "This may be the result of a bug - please submit an issue to " +
+                    "<a href=\""+ issuesLink + "\">"+ issuesLink + "</a><br/><br/>" +
+                    "<b>Full Error:</b><br/>" + e, JOptionPane.ERROR_MESSAGE);
             return;
         }
 
@@ -60,9 +97,10 @@ public class Main {
         try {
             tray.add(trayIcon);
         } catch (AWTException e) {
-            windowMessageHyperlink("Pin-App  -  Error", "ERROR: Failed to load app to system tray<br/>" +
-                    "If you believe this is a bug please submit an issue to " +
-                    "<a href=\"https://github.com/bobcat33/PinApp/issues\">https://github.com/bobcat33/PinApp/issues</a>", JOptionPane.ERROR_MESSAGE);
+            windowMessageHyperlink(Main.appName + "  -  Error", "ERROR: Failed to load app to system tray" +
+                    "<br/>If you believe this is a bug please submit an issue to " +
+                    "<a href=\""+ issuesLink + "\">"+ issuesLink + "</a><br/><br/>" +
+                    "<b>Full Error:</b><br/>" + e, JOptionPane.ERROR_MESSAGE);
         }
     }
 
@@ -94,4 +132,5 @@ public class Main {
 
         JOptionPane.showMessageDialog(null, contentComponent, title, messageType);
     }
+
 }
