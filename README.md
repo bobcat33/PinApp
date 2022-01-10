@@ -1,6 +1,8 @@
 # Pin-App
 Pin-App is a Java app that allows users to select windows that they have open to be pinned in front of their other windows. When a window is pinned it will not be overlapped by any other open windows unless the other window is also pinned.
 
+**I will be uploading a compiled JAR of the app and an executable soon**
+
 **Table of Contents**
 * [Usage](#usage)
 * [Things to note](#toNote)
