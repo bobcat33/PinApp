@@ -1,3 +1,4 @@
+<a name="top"></a>
 # Pin-App
 Pin-App is a Java app that allows users to select windows that they have open to be pinned in front of their other windows. When a window is pinned it will not be overlapped by any other open windows unless the other window is also pinned.
 
@@ -14,3 +15,5 @@ Pin-App is a Java app that allows users to select windows that they have open to
 * Once selected the app window will be pinned above your other windows, to unpin it simply select it again or select "Unpin all pinned windows". The pinned windows are highlighted with a tick mark before their name.
 
 ![unpin the app](images/step3.png)
+
+[Back to Top ^](#top)
