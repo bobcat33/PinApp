@@ -24,6 +24,7 @@ Pin-App is a Java app that allows users to select windows that they have open to
 <a name="toNote"></a>
 # Things to note
 * **This will only work on Windows operating systems.** I have only tested it on Windows 10 but it is likely to work one previous (and future) versions of Windows too.
+* Follow [this guide](https://support.microsoft.com/en-us/windows/add-an-app-to-run-automatically-at-startup-in-windows-10-150da165-dcd9-7230-517b-cf3c295d89dd) to add the app to your startup apps so that it opens every time you turn your computer on.
 * I programmed this app using JDK 16.0.1 and the following libraries:
   - [JNA](https://github.com/java-native-access/jna#jna) (v5.10.0)
   - [JNA Platform](https://github.com/java-native-access/jna#jna-platform) (v5.10.0)
