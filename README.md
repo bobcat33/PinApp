@@ -7,6 +7,18 @@ Pin-App is a Java app that allows users to select windows that they have open to
 * [Usage](#usage)
 * [Things to note](#toNote)
 
+<a name="install"></a>
+# Installation
+* To install the app first download the dedicated installer from the latest release in [releases](https://github.com/bobcat33/PinApp/releases), then run it.
+
+* Follow the steps in the installer, then once it's installed the app will create a shortcut on your desktop as well as appear in your Windows app drawer.
+
+![App shortcuts](images/install1.png)
+* Run the app to make it appear in your system tray.
+
+![App in system tray](images/install2.png)
+* Follow [this quick guide](https://support.microsoft.com/en-us/windows/add-an-app-to-run-automatically-at-startup-in-windows-10-150da165-dcd9-7230-517b-cf3c295d89dd) to add the app to your startup apps so that it opens every time you turn your computer on.
+
 <a name="usage"></a>
 # Usage
 * To pin an app simply right click on the app in the system tray.
@@ -23,8 +35,7 @@ Pin-App is a Java app that allows users to select windows that they have open to
 
 <a name="toNote"></a>
 # Things to note
-* **This will only work on Windows operating systems.** I have only tested it on Windows 10 but it is likely to work one previous (and future) versions of Windows too.
-* Follow [this guide](https://support.microsoft.com/en-us/windows/add-an-app-to-run-automatically-at-startup-in-windows-10-150da165-dcd9-7230-517b-cf3c295d89dd) to add the app to your startup apps so that it opens every time you turn your computer on.
+* **This will only work on Windows operating systems.** I have only tested it on Windows 10 but it is likely to work on previous (and future) versions of Windows too.
 * I programmed this app using JDK 16.0.1 and the following libraries:
   - [JNA](https://github.com/java-native-access/jna#jna) (v5.10.0)
   - [JNA Platform](https://github.com/java-native-access/jna#jna-platform) (v5.10.0)
