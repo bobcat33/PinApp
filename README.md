@@ -3,7 +3,8 @@ Pin-App is a Java app that allows users to select windows that they have open to
 
 **\~\~ See [releases](https://github.com/bobcat33/PinApp/releases) for the executable Windows installer \~\~**
 
-**Table of Contents**
+### Table of Contents
+* [Installation](#install)
 * [Usage](#usage)
 * [Things to note](#toNote)
 
