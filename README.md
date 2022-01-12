@@ -26,6 +26,17 @@ Pin-App is a Java app that allows users to select windows that they have open to
 
 * If this does not work you can still follow [this guide](https://support.microsoft.com/en-us/windows/add-an-app-to-run-automatically-at-startup-in-windows-10-150da165-dcd9-7230-517b-cf3c295d89dd) to add the app to your startup apps manually.
 
+## Updating
+The process for updating Pin-App is the same as [installing](#install) with a few differences:
+* **Do not use the same installer as the older version** - Ensure that you have the most up-to-date installer downloaded from [releases.](https://github.com/bobcat33/PinApp/releases/latest)
+* During installation you will be given the option to choose a file path, like the first time you installed. So as to remove the older version from your system it is recommended that you select the same path that you installed the earlier version to. The default is `C:\Program Files\Pin-App`. If you select the same path you will be presented with the option below, click yes - this will remove the older version.
+
+![Remove older version](images/install3.png)
+
+* During install if you have the app open you will be presented with the window below. If you have any windows pinned at this stage it is recommended that you unpin them first. Select to close the applications and press OK. This is the faster way to install as it does not require a reboot.
+
+![Close app](images/install4.png)
+
 <a name="usage"></a>
 # Usage
 * To pin an app simply right click on the app in the system tray.
