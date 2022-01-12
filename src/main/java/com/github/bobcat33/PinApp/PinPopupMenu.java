@@ -11,6 +11,9 @@ public class PinPopupMenu extends PopupMenu {
 
     private ArrayList<CheckboxPinItem> windows = new ArrayList<>();
 
+    private static final int maxPinLabelLength = 32;
+    private static final String overLimitText = "...";
+
     private final MenuItem unPinAll = new MenuItem("Unpin all pinned windows");
     private final MenuItem noWindows = new MenuItem("There are currently no active windows...");
     private final Settings settings = new Settings("Settings", "Run " + Main.appName + " on startup", "Suggest a feature", "Report a bug");
@@ -160,5 +163,13 @@ public class PinPopupMenu extends PopupMenu {
                 unPinAll.setEnabled(true);
             }
         }
+    }
+
+    public static int getMaxLabelLength() {
+        return maxPinLabelLength;
+    }
+
+    public static String getLimitText() {
+        return overLimitText;
     }
 }
