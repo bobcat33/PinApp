@@ -22,6 +22,7 @@ public class CheckboxPinItem extends CheckboxMenuItem {
             label = title.substring(0, PinPopupMenu.getMaxLabelLength()) + PinPopupMenu.getLimitText();
 
         super.setLabel(label);
+        super.setName(title);
     }
 
     public WinDef.HWND getWindow() {
