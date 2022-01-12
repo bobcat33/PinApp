@@ -11,7 +11,6 @@ import java.io.IOException;
 import java.net.URI;
 
 public class Settings extends Menu {
-    // TODO - Store all file paths as class variables in Main
     private boolean usingStartup;
     private StartupItem startupItem;
 
@@ -72,6 +71,7 @@ public class Settings extends Menu {
                                 "\" of \"" + Main.exePath + "\"<br/>If you believe this is a bug please submit an issue to " +
                                 "<a href=\"" + Main.issuesLink + "\">" + Main.issuesLink + "</a><br/><br/>" +
                                 "<b>Full Error:</b><br/>The directory \"" + Main.startupDirPath + "\" does not exist.", JOptionPane.ERROR_MESSAGE);
+                        setState(false); // In case an update isn't called
                         return;
                     }
                     if (!new File(Main.exePath).exists()) {
@@ -80,6 +80,7 @@ public class Settings extends Menu {
                                 "\" of \"" + Main.exePath + "\"<br/>If you believe this is a bug please submit an issue to " +
                                 "<a href=\"" + Main.issuesLink + "\">" + Main.issuesLink + "</a><br/><br/>" +
                                 "<b>Full Error:</b><br/>The directory \"" + Main.exePath + "\" does not exist.", JOptionPane.ERROR_MESSAGE);
+                        setState(false); // In case an update isn't called
                         return;
                     }
                     try {
@@ -90,12 +91,15 @@ public class Settings extends Menu {
                                 "\" of \"" + Main.exePath + "\"<br/>If you believe this is a bug please submit an issue to " +
                                 "<a href=\"" + Main.issuesLink + "\">" + Main.issuesLink + "</a><br/><br/>" +
                                 "<b>Full Error:</b><br/>" + exception, JOptionPane.ERROR_MESSAGE);
+                        setState(false); // In case an update isn't called
                     }
                 } else {
-                    if (!shortcut.delete())
+                    if (!shortcut.delete()) {
                         Main.windowMessageHyperlink(Main.appName + "  -  Error", "ERROR: Failed to remove shortcut" +
                                 "<br/>If you believe this is a bug please submit an issue to " +
                                 "<a href=\"" + Main.issuesLink + "\">" + Main.issuesLink + "</a>", JOptionPane.ERROR_MESSAGE);
+                        setState(true); // In case an update isn't called
+                    }
                 }
             });
         }
@@ -105,7 +109,5 @@ public class Settings extends Menu {
             setState(shortcut.exists());
             return true;
         }
-
     }
-
 }
