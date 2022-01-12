@@ -20,7 +20,7 @@ Pin-App is a Java app that allows users to select windows that they have open to
 
 ![App in system tray](images/install2.png)
 
-* To add the app to your startup apps so that it opens every time you turn your computer on hover hover the settings menu and select **"Run Pin-App on startup"**.
+* To add the app to your startup apps so that it opens every time you turn your computer on hover over the settings option and select **"Run Pin-App on startup"**.
 
 ![Add to startup](images/step4.png)
 
