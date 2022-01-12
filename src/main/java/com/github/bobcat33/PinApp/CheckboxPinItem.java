@@ -14,6 +14,16 @@ public class CheckboxPinItem extends CheckboxMenuItem {
         this.setLabel(WindowTools.getLabel(window));
     }
 
+    // Override the setLabel function so that labels cannot be longer than the length defined in PinPopupMenu
+    @Override
+    public void setLabel(String title) {
+        String label = title;
+        if (title.length() > PinPopupMenu.getMaxLabelLength())
+            label = title.substring(0, PinPopupMenu.getMaxLabelLength()) + PinPopupMenu.getLimitText();
+
+        super.setLabel(label);
+    }
+
     public WinDef.HWND getWindow() {
         return window;
     }
