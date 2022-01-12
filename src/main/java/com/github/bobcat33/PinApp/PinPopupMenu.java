@@ -13,6 +13,7 @@ public class PinPopupMenu extends PopupMenu {
 
     private final MenuItem unPinAll = new MenuItem("Unpin all pinned windows");
     private final MenuItem noWindows = new MenuItem("There are currently no active windows...");
+    private final Settings settings = new Settings("Settings", "Run " + Main.appName + " on startup", "Suggest a feature", "Report a bug");
     private final MenuItem exitItem = new MenuItem("[X] Close " + Main.appName);
 
     public void generateDefaults() {
@@ -36,6 +37,9 @@ public class PinPopupMenu extends PopupMenu {
         displayNoWindows();
 
         this.addSeparator();
+
+        this.add(settings);
+
         exitItem.addActionListener(exitListener);
         this.add(exitItem);
     }
@@ -102,7 +106,7 @@ public class PinPopupMenu extends PopupMenu {
         return false;
     }
 
-    public void updatePinList() {
+    public void update() {
         ArrayList<WinDef.HWND> openWindows = WindowTools.getWindows();
 
         this.flushClosedPins();
@@ -115,6 +119,8 @@ public class PinPopupMenu extends PopupMenu {
         }
 
         updateUnPinAll();
+
+        settings.update();
     }
 
     public void setPinnedState(boolean pinned, CheckboxPinItem pin) {
@@ -126,7 +132,7 @@ public class PinPopupMenu extends PopupMenu {
     }
 
     public void setPinnedState(boolean pinned, WinDef.HWND window) {
-        this.updatePinList();
+        this.update();
 
         for (CheckboxPinItem item : windows) {
             if (WindowTools.getLabel(item.getWindow()).equals(WindowTools.getLabel(window))) {
