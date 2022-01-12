@@ -66,6 +66,7 @@ The process for updating Pin-App is the same as [installing](#install) with a fe
 * Some windows are not able to be pinned, I have listed the ones I know of below but if you find any more please let me know in [issues.](https://github.com/bobcat33/PinApp/issues)
   - Task Manager (Can be pinned from within Task Manager in its options dropdown menu by selecting "Always on top")
   - Windows Resource Manager
+  - Windows Device Manager
 * Occasionally an app might not be pinned, I am currently unsure why this happens but restarting Pin-App or closing and re-opening the app's window often helps.
 * I have not extensively tested this app, if you find any bugs / problems please report them in [issues](https://github.com/bobcat33/PinApp/issues) or [start a discussion.](https://github.com/bobcat33/PinApp/discussions/categories/bugs)
 * I am fully open to critisism, if you think there are better ways of doing certain things or you have feature requests feel free to share them in [discussions](https://github.com/bobcat33/PinApp/discussions/categories/ideas) :)
