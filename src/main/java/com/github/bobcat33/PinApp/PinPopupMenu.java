@@ -51,7 +51,7 @@ public class PinPopupMenu extends PopupMenu {
     public void refreshPinNames() {
         for (CheckboxPinItem pin : windows) {
             String realLabel = WindowTools.getLabel(pin.getWindow());
-            if (!realLabel.equals(pin.getLabel()))
+            if (!realLabel.equals(pin.getName()))
                 pin.setLabel(realLabel);
         }
     }
