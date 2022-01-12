@@ -10,7 +10,7 @@ Pin-App is a Java app that allows users to select windows that they have open to
 
 <a name="install"></a>
 # Installation
-* To install the app first download the dedicated installer from the latest release in [releases](https://github.com/bobcat33/PinApp/releases), then run it.
+* To install the app first download the dedicated installer from the latest release in [releases](https://github.com/bobcat33/PinApp/releases/latest), then run it.
 
 * Follow the steps in the installer, then once it's installed the app will create a shortcut on your desktop as well as appear in your Windows app drawer.
 
@@ -40,6 +40,7 @@ Pin-App is a Java app that allows users to select windows that they have open to
 * I programmed this app using JDK 16.0.1 and the following libraries:
   - [JNA](https://github.com/java-native-access/jna#jna) (v5.10.0)
   - [JNA Platform](https://github.com/java-native-access/jna#jna-platform) (v5.10.0)
+  - [mslinks](https://github.com/DmitriiShamrikov/mslinks) (v1.0.7)
 * Some windows are not able to be pinned, I have listed the ones I know of below but if you find any more please let me know in [issues.](https://github.com/bobcat33/PinApp/issues)
   - Task Manager (Can be pinned from within Task Manager in its options dropdown menu by selecting "Always on top")
   - Windows Resource Manager
