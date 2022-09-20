@@ -17,7 +17,9 @@ public class Settings extends Menu {
     public Settings(String label, String startup, String suggest, String report) {
         super(label);
 
-        if (System.getProperty("os.name").equals("Windows 10") && new File(Main.exePath).exists()) {
+        String osName = System.getProperty("os.name");
+
+        if ((osName.equals("Windows 10") || osName.equals("Windows 11")) && new File(Main.exePath).exists()) {
             this.startupItem = new StartupItem(startup);
             this.usingStartup = true;
             add(startupItem);
