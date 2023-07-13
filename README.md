@@ -57,8 +57,8 @@ The process for updating Pin-App is the same as [installing](#install) with a fe
 
 <a name="toNote"></a>
 # Things to note
-* **This will only work on Windows operating systems.** I have only tested it on Windows 10 but it is likely to work on previous (and future) versions of Windows too.
-* The built in **"Run Pin-App on startup"** settings option will only be available if you are running it on Windows 10.
+* **This will only work on Windows operating systems.** I have only tested it on Windows 10 and 11 but it is likely to work on previous (and future) versions of Windows too.
+* The built in **"Run Pin-App on startup"** settings option will only be available if you are running it on Windows 10 or 11.
 * I programmed this app using JDK 16.0.1 and the following libraries:
   - [JNA](https://github.com/java-native-access/jna#jna) (v5.10.0)
   - [JNA Platform](https://github.com/java-native-access/jna#jna-platform) (v5.10.0)
@@ -67,7 +67,7 @@ The process for updating Pin-App is the same as [installing](#install) with a fe
   - Task Manager (Can be pinned from within Task Manager in its options dropdown menu by selecting "Always on top")
   - Windows Resource Manager
   - Windows Device Manager
-* Occasionally an app might not be pinned, I am currently unsure why this happens but restarting Pin-App or closing and re-opening the app's window often helps.
+* Occasionally an app might not be pinned, I am currently unsure why this happens but restarting Pin-App or closing and re-opening the app's window often helps. Another solution I have found that occasionally works is to pin and unpin windows file explorer then try again, this process may have to be repeated.
 * I have not extensively tested this app, if you find any bugs / problems please report them in [issues](https://github.com/bobcat33/PinApp/issues) or [start a discussion.](https://github.com/bobcat33/PinApp/discussions/categories/bugs)
 * I am fully open to critisism, if you think there are better ways of doing certain things or you have feature requests feel free to share them in [discussions](https://github.com/bobcat33/PinApp/discussions/categories/ideas) :)
 
